@@ -319,7 +319,7 @@ Para que esta função funcione correctamente, é necessário que a lista cumpra
 
 A função assume que a lista é uma lista de nodes definidos pela estrutura acima. No entanto, os alunos são livres de modificar a estrutura, adicionando campos novos, desde que mantenham os nomes dos campos que estão na estrutura sugerida.
 
- 
+Para compilar o código incluindo a biblioteca, é necessário linkar com o ficheiro board.o. É fornecido um ficheiro Makefile que facilita o processo. Para compilar usando o makefile, basta executar o comando `make` no terminal.
  
 ## Mensagens de Erro e códigos de saída
 Todas as mensagens que devem ser apresentadas no programa são fornecido no ficheiro board.h .
