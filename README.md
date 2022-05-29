@@ -290,6 +290,15 @@ main.exe 0 5 9 configuracao.txt
 
 O ficheiro contem a uma lista de números, cada número identifica uma casa segura.
 
+Os argumentos são opcionais e o utilizador pode passar as seguintes combinações de argumentos:
+- Não passar argumentos - deverão ser utilizados os valores por omissão.
+- Passar apenas o modo de apresentação do tabuleiro
+- Passar o modo de apresentação do tabuleiro, e o número de linhas
+- Passar o modo de apresentação do tabuleiro, o número de linhas
+- Passar o modo de apresentação do tabuleiro, e o número de linhas
+- Passar o modo de apresentação do tabuleiro, o número de linhas e o numero de colunas
+- Passar todos os argumentos.
+
 ## Leitura do ficheiro (Casas Seguras)
 O ficheiro é uma lista de números, onde cada número indica uma casa segura do tabuleiro.
 Se o ficheiro quiser indicar que as casas seguras são 2, 7 e 12. O conteudo do ficheiro deve ser o seguinte:
