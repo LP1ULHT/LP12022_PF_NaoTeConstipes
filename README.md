@@ -278,14 +278,15 @@ srand(1); // initialize seed
 
 
 ## Argumentos do main
-Ao lançar a aplicação ela pode aceitar 3 argumentos.
-Os argumentos são dois números e um nome dum ficheiro, por exemplo:
+Ao lançar a aplicação ela pode aceitar 4 argumentos.
+Os argumentos são três números e um nome dum ficheiro, por exemplo:
 ```
-main.exe 5 9 configuracao.txt
+main.exe 0 5 9 configuracao.txt
 ```
-* O primeiro numero indica o número de linhas do tabuleiro (neste exemplo é 5)
-* O segundo numero indica o número de colunas do tabuleiro (neste exemplo é 9)
-* O terceiro é um campo com um nome dum ficheiro com informação das casas seguras (neste exemplo configuração.txt)
+* O primeiro numero indica o modo de apresentação do tabuleiro - neste caso 0, é o modo por defeito. Em alternativa, o valor 1 fará com que o tabuleiro seja impresso em modo simples, apenas mostrando o numero das casas e os peões.
+* O segundo numero indica o número de linhas do tabuleiro (neste exemplo é 5)
+* O terceiro numero indica o número de colunas do tabuleiro (neste exemplo é 9)
+* O quarto é um campo com um nome dum ficheiro com informação das casas seguras (neste exemplo configuração.txt)
 
 O ficheiro contem a uma lista de números, cada número identifica uma casa segura.
 
