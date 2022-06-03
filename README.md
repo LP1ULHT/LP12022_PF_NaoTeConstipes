@@ -332,7 +332,7 @@ Para utilizarem esta biblioteca é necessário fazer o include do .h nos locais 
  
 ## Mensagens de erro e códigos de saída
 Todas as mensagens que devem ser apresentadas no programa são fornecidas no ficheiro board.h .
-O board.h também inclui a estruturas de dados mencionadas na secção tabuleiro.
+O board.h também inclui as estruturas de dados mencionadas na secção tabuleiro.
 
 De notar que a  mensagem, "Jogador lançou dados com valor " necessita à frente a impressão do número do dado.
 Por exemplo:
