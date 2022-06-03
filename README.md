@@ -410,7 +410,7 @@ O projeto de recurso e de época especial valem 50% da nota final e será cotado
  
 A nota indicada pelo pandora é apenas indicativa. O código será posteriormente comparado e avaliado pelos docentes.
 
-Após a entrega do projeto será realizada uma defesa do projeto onde cada elemento do grupo terá de efetuar alterações ao código. Se o aluno não conseguir efetuar as alterações pedidas ao seu código será aplicada uma penalização sobre a nota do projeto que poderá variar entre 10% a 100%.
+Após a entrega do projeto será realizada uma defesa do projeto onde cada elemento terá de efetuar alterações ao código. Se o aluno não conseguir efetuar as alterações pedidas ao seu código será aplicada uma penalização sobre a nota do projeto que poderá variar entre 10% a 100%.
  
 Este projeto tem nota mínima.
 
