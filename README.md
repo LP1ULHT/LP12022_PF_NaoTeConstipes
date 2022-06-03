@@ -254,8 +254,8 @@ typedef enum {FALSE = 0, TRUE = 1, WIN = 2} state;
 ```
 
 Os valores possíveis são:
- - FALSE – O peão não está presente nesta casa
- - TRUE – O peão está presente nesta casa
+ - FALSE – O peão não está presente nesta casa / a casa não é segura e podem comer os peões
+ - TRUE – O peão está presente nesta casa / a casa é segura e não podem comer os peões
  - WIN – O peão está desativado, porque já deu a volta ao tabuleiro e ganhou.
 
 
