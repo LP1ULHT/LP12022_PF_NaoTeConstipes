@@ -258,6 +258,10 @@ Os valores possíveis são:
  - TRUE – O peão está presente nesta casa / a casa é segura e não podem comer os peões
  - WIN – O peão está desativado, porque já deu a volta ao tabuleiro e ganhou.
 
+Limites do tabuleiro:
+Tabuleiro tem de ter no minimo 3 linhas e impar
+Numero colunas do tabuleiro tem de ser superior a 4
+O tamanho maxido do tabuleiro é 128 casas
 
 ## Dados (números aleatórios)
 O lançamento dos dados deve ser feito usando a função fornecida:
