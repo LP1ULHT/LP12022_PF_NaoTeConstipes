@@ -249,9 +249,9 @@ A matriz é composta por duas linhas que são o jogador 1 e jogador 2;
  A matriz é composta por 4 colunas que são os peões a,b,c e d do jogador 1 e w, x, y e z do jogador 2.
  O tipo da matriz, `state`, deve ser definido da seguinte forma:
 O campo jogador_peao é uma matriz que representa todos os peões do jogo.
-´´´
+```
 typedef enum {FALSE = 0, TRUE = 1, WIN = 2} state;
-´´´
+```
 
 Os valores possíveis são:
  - FALSE – O peão não está presente nesta casa
