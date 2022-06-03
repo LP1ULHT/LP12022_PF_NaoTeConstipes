@@ -294,8 +294,6 @@ Os argumentos são opcionais e o utilizador pode passar as seguintes combinaçõ
 - Não passar argumentos - deverão ser utilizados os valores por omissão;
 - Passar apenas o modo de apresentação do tabuleiro;
 - Passar o modo de apresentação do tabuleiro, e o número de linhas;
-- Passar o modo de apresentação do tabuleiro, o número de linhas
-- Passar o modo de apresentação do tabuleiro, e o número de linhas;
 - Passar o modo de apresentação do tabuleiro, o número de linhas e o número de colunas;
 - Passar todos os argumentos.
 
