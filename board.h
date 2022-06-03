@@ -60,10 +60,10 @@ typedef enum {HEADER = 0, OCCUPANCY_1 = 1, SAFE_HOUSE = 2, OCCUPANCY_2 = 3, TAIL
 typedef struct
 {
 	/** jogador 1 e 2 e seus peoes 1 a 4 presentes TRUE ou nao FALSE */
-	line_rendering jogador_peao[2][4];
+	state jogador_peao[2][4];
 	
 	/** Indica se a casa é segura e nao podem comer os peoes */
-	line_rendering casaSegura;
+	state casaSegura;
 } casa;
 
 /**
