@@ -51,8 +51,6 @@ O tabuleiro é construído quando o programa arranca. O tabuleiro tem sempre a f
    - número de colunas = 7
 
 
-.
-
 Cada jogada começa com o lançamento de dois dados (ou seja pode sair um número entre 2 e 12). Após lançar os dados, o jogador indica qual o peão que pretende movimentar. O peão selecionado avança no tabuleiro no sentido dos ponteiros do relógio. Caso o peão passe por uma casa onde esteja um peão da família oposta, fará com que esse peão (o da família oposta) tenha de voltar à sua casa mãe. Esta situação chama-se deixar o peão constipado.
 
 Se o número do dado garante que nessa jogada o peão dá uma volta ao tabuleiro, então:
@@ -203,8 +201,10 @@ Jogador lancou dados com valor 10
 |      ||      ||      ||      ||      ||      || **** |
 |      ||      ||      ||      ||      ||      || w    |
 +------++------++------++------++------++------++------+
-
 ```
+
+Note que as casas mãe são sempre casas seguras.
+
 # Implementação
 
 ## Tabuleiro
@@ -310,6 +310,7 @@ Se o ficheiro quiser indicar que as casas seguras são 2, 7 e 12. O conteúdo do
 7
 12
 ```
+
 ## Inclusão e compilação das funções fornecidas
 
 É fornecida uma biblioteca `board.h` e correspondente `board.o` que deve ser incluída e utilizada. Esta biblioteca fornece duas funções:
@@ -333,6 +334,12 @@ Para que esta função funcione corretamente, é necessário que a lista cumpra 
 A função assume que a lista é uma lista de nodes definidos pela estrutura acima. No entanto, os alunos são livres de modificar a estrutura, adicionando campos novos, desde que mantenham os nomes dos campos que estão na estrutura sugerida.
 
 Para utilizarem esta biblioteca é necessário fazer o include do .h nos locais onde chamam as funções fornecidas, isto é, `#include "board.h"`. Para compilar o código incluindo a biblioteca, é necessário linkar com o ficheiro board.c. É fornecido um ficheiro Makefile que facilita o processo. Para compilar usando o makefile, basta executar o comando `make` no terminal.
+
+
+
+*Atenção:* Não é necessário compreenderem o que está no `board.c`. Apenas devem utilizar as funções que são disponibilizadas na interface `board.h`.
+ 
+ 
  
 ## Mensagens de erro e códigos de saída
 Todas as mensagens que devem ser apresentadas no programa são fornecidas no ficheiro board.h .
@@ -341,6 +348,8 @@ O board.h também inclui as estruturas de dados mencionadas na secção tabuleir
 De notar que a  mensagem, "Jogador lançou dados com valor " necessita à frente a impressão do número do dado.
 Por exemplo:
 *Jogador lancou dados com valor 10*
+
+
 
 # Exemplo de utilização
 
