@@ -1,22 +1,21 @@
 #ifndef __BOARD_H__
 #define __BOARD_H__
 
+// definicoes que podem, ou nao, ser uteis:
 #define SYMBOLS_J1 " abcdABCD"
 #define SYMBOLS_J2 " wxyzWXYZ"
-
 #define JOGADOR1 0
 #define JOGADOR2 1
-#define PEAO1 0
-#define PEAO2 1
-#define PEAO3 2
-#define PEAO4 3
-
-#define DIM 128
 #define MIN_ROWS 3
 #define MIN_COLS 4
-#define DICE_SIZE 6
 
+
+
+// mensagem que deve ser apresentada qundo os parametros do main nao sao validos
+// o programa apresenta a mensagem e termina
 #define INVAL_PARAMS "ERRO: Parametros invalidos"
+
+// mensagem apresentada sempre que o utilizador faz uma jogada ou comando invalido
 #define INVAL_MOVE "Comando Invalido"
 
 #define EXIT_MSG "Fim do jogo"
@@ -24,13 +23,14 @@
 #define PL2_WINS "Jogador 2 Ganhou!"
 #define PL_DICE "Jogador lancou dados com valor "
 
+// mensagem apresentada se a abertura do ficheiro falhar
 #define FILE_ERR1 "Ficheiro nao encontrado \n"
+// mensagem apresentada se a leitur do ficheiro falhar
 #define FILE_ERR2 "Erro na leitura do ficheiro\n"
 
 #define PL1_MOVE "------ Jogador 1 ------"
 #define PL2_MOVE "------ Jogador 2 ------"
 
-#define PRINTMOVE(P) P ? puts(PL2_MOVE) :  puts(PL1_MOVE)
 
 /** 
 	Estado de um peao
@@ -39,12 +39,6 @@
    WIN - O peao ja deu um volta, e esta na casa mae 
 */
 typedef enum {FALSE = 0, TRUE = 1, WIN = 2} state;
-
-/**
-	Nomeia cada linha quando uma casa e desenhada
-	o topo da casa é o HEADER, e o fundo da casa desenhada é o TAIL
-*/
-typedef enum {HEADER = 0, OCCUPANCY_1 = 1, SAFE_HOUSE = 2, OCCUPANCY_2 = 3, TAIL = 4} line_rendering;
 
 /**
 	Casa de um tabuleiro
@@ -85,24 +79,6 @@ typedef struct
 	int length;
 } list;
 
-/**
-	Obtem uma determinada casa do tabuleiro que está definido na lista 
-	localizada pela sua posicao
-	
-	theBoard - Lista de casas do tabuleiro
-	idx - Numero de posicao da casa
-*/
-casa * listCasaAt(list theBoard, int idx);
-
-/**
-	Imprime o conteudo dentro de uma casa do tabuleiro linha a linha
-	Incluindo peoes presentes na casa e simbolo das casas seguras
-	
-	line - linha da casa a imprimir
-	pos - Numero de posicao da casa a imprimir
-	theBoard - Lista contendo o tabuleiro
-*/
-void printCasaLine(line_rendering line, int pos, list theBoard);
 
 /**
 	Simula o dado do jogo

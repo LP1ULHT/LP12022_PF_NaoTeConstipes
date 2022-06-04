@@ -4,6 +4,40 @@
 
 #include "board.h"
 
+
+#define PEAO1 0
+#define PEAO2 1
+#define PEAO3 2
+#define PEAO4 3
+#define DICE_SIZE 6
+
+
+/**
+	Nomeia cada linha quando uma casa e desenhada
+	o topo da casa é o HEADER, e o fundo da casa desenhada é o TAIL
+*/
+typedef enum {HEADER = 0, OCCUPANCY_1 = 1, SAFE_HOUSE = 2, OCCUPANCY_2 = 3, TAIL = 4} line_rendering;
+
+/**
+	Obtem uma determinada casa do tabuleiro que está definido na lista 
+	localizada pela sua posicao
+	
+	theBoard - Lista de casas do tabuleiro
+	idx - Numero de posicao da casa
+*/
+casa * listCasaAt(list theBoard, int idx);
+
+/**
+	Imprime o conteudo dentro de uma casa do tabuleiro linha a linha
+	Incluindo peoes presentes na casa e simbolo das casas seguras
+	
+	line - linha da casa a imprimir
+	pos - Numero de posicao da casa a imprimir
+	theBoard - Lista contendo o tabuleiro
+*/
+void printCasaLine(line_rendering line, int pos, list theBoard);
+
+
 /**
 	Simula o dado do jogo
 	
