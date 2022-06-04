@@ -19,11 +19,6 @@
 #define INVAL_PARAMS "ERRO: Parametros invalidos"
 #define INVAL_MOVE "Comando Invalido"
 
-#define INVAL_INPUT1 "Caracter invalido, opoes validas sao 's' ou 'h'"
-#define INVAL_INPUT2 "Jogada invalida, faça nova jogada"
-#define INVAL_INPUT3 "Peao escolhido invalido"
-#define INVAL_INPUT4 "Peao escolhido ja terminou percurso"
-
 #define EXIT_MSG "Fim do jogo"
 #define PL1_WINS "Jogador 1 Ganhou!"
 #define PL2_WINS "Jogador 2 Ganhou!"
@@ -31,9 +26,6 @@
 
 #define FILE_ERR1 "Ficheiro nao encontrado \n"
 #define FILE_ERR2 "Erro na leitura do ficheiro\n"
-#define FILE_ERR3 "Casa segura adicionada \n"
-
-#define ASSERT_ERR1 "Valor de colunas e linhas tem de ser par"
 
 #define PL1_MOVE "------ Jogador 1 ------"
 #define PL2_MOVE "------ Jogador 2 ------"
@@ -125,8 +117,8 @@ int rolldice(int numberOfDices);
 	rows - Numero de linhas do tabuleiro
 	cols - Numero de colunas do tabuleiro
 	theBoard - Lista que contem as casas do tabuleiro
+	modo - modo de apresentação do tabuleiro
 */
-void boardPrint(const unsigned int rows, const unsigned int cols, list l);
-
+void boardPrint(const unsigned int rows, const unsigned int cols, list theBoard, const int modo);
 
 #endif

@@ -29,10 +29,12 @@ int rolldice(int numberOfDices)
 	theBoard - Lista que contem as casas do tabuleiro
 	modo - imprime a posicao dos peoes se for 1, nao imprime se for 0
 */
-void boardPrint(const unsigned int rows, const unsigned int cols, list theBoard)
+void boardPrint(const unsigned int rows, const unsigned int cols, list theBoard, const int modo)
 {
 	unsigned int i, k, pos, right_pos, left_pos, pos_l, pos_r;
 	line_rendering line;
+	node *t;
+	casa *it;
 
 	const int Ncasas = 2*(cols+rows-2);
 
@@ -40,6 +42,47 @@ void boardPrint(const unsigned int rows, const unsigned int cols, list theBoard)
 	assert(cols > MIN_COLS && "Numero colunas do tabuleiro tem de ser superior a 4");
 	assert(theBoard.length == Ncasas && "Falha na construcao do tabuleiro, demasiado grande");
 	assert(theBoard.head != NULL && "Falha na construcao do tabuleiro");
+
+	assert(modo == 0 || modo == 1);
+
+	if (modo)
+	{
+		i = 0;
+		for (t = theBoard.head; (unsigned) i < (unsigned) Ncasas ; t = t-> next, i++)
+		{
+			it = &(t -> item);
+			printf("%d ", i); 
+
+			if (it->jogador_peao[JOGADOR1][PEAO1])
+				printf("%c", it->jogador_peao[JOGADOR1][PEAO1] == WIN ? SYMBOLS_J1[5]: SYMBOLS_J1[1]);
+
+			if (it->jogador_peao[JOGADOR1][PEAO2])
+				printf("%c", it->jogador_peao[JOGADOR1][PEAO2] == WIN ? SYMBOLS_J1[6]: SYMBOLS_J1[2]);
+
+			if (it->jogador_peao[JOGADOR1][PEAO3])
+				printf("%c", it->jogador_peao[JOGADOR1][PEAO3] == WIN ? SYMBOLS_J1[7]: SYMBOLS_J1[3]);
+
+			if (it->jogador_peao[JOGADOR1][PEAO4])
+				printf("%c", it->jogador_peao[JOGADOR1][PEAO4] == WIN ? SYMBOLS_J1[8]: SYMBOLS_J1[4]);
+
+
+			if (it->jogador_peao[JOGADOR2][PEAO1])
+				printf("%c", it->jogador_peao[JOGADOR2][PEAO1] == WIN ? SYMBOLS_J2[5]: SYMBOLS_J2[1]);
+
+			if (it->jogador_peao[JOGADOR2][PEAO2])
+				printf("%c", it->jogador_peao[JOGADOR2][PEAO2] == WIN ? SYMBOLS_J2[6]: SYMBOLS_J2[2]);
+
+			if (it->jogador_peao[JOGADOR2][PEAO3])
+				printf("%c", it->jogador_peao[JOGADOR2][PEAO3] == WIN ? SYMBOLS_J2[7]: SYMBOLS_J2[3]);
+
+			if (it->jogador_peao[JOGADOR2][PEAO4])
+				printf("%c", it->jogador_peao[JOGADOR2][PEAO4] == WIN ? SYMBOLS_J2[8]: SYMBOLS_J2[4]);
+
+			putchar('.');
+		}
+		putchar('\n');
+		return;
+	}
 
 	/* print first line */
 	/* first line starts in position floor(rows/2) */
