@@ -398,7 +398,12 @@ De notar que ‘y’ está na casa 14, logo a 10 casas da casa mãe, se o valor 
  
 # Material a entregar
 
-* Ficheiro `.c` com código devidamente comentado e indentado:
+* Ficheiro `.zip` com todos os ficheiros `.c` e `.h`:
+    - O ficheiro `.zip` não deve conter o ficheiro `Makefile`
+    - Para criar o ficheiro `.zip` pode simplesmente executar na linha de comandos o comando 
+    
+       ```make zip```
+       
     - Deve implementar as funcionalidades pedidas;
     - O código deverá ser submetido na plataforma PANDORA [(2)](#ref2);
     - A plataforma corre automaticamente uma série de testes e no fim atribui uma classificação. **indicativa**. Os alunos deverão analisar o relatório emitido pela plataforma e poderão alterar o código e voltar a submeter o trabalho. Neste trabalho haverá limite de submissões.
