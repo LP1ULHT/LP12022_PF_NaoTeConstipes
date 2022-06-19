@@ -311,6 +311,14 @@ Se o ficheiro quiser indicar que as casas seguras são 2, 7 e 12. O conteúdo do
 12
 ```
 
+Quando o ficheiro é aberto para leitura, o programa imprime a mensagem:
+```
+fich nome_do_ficheiro\n
+```
+
+No máximo só podem existir 128 casas seguras.
+
+
 ## Inclusão e compilação das funções fornecidas
 
 É fornecida uma biblioteca `board.h` e correspondente `board.o` que deve ser incluída e utilizada. Esta biblioteca fornece duas funções:
