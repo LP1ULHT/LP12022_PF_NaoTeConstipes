@@ -2,7 +2,7 @@
 
 * 2021/2022*
 
-# Projeto Final - Não Te Constipes
+# Projeto Final / Projecto de Recurso - Não Te Constipes
 
 
 # 1. Introdução
@@ -30,6 +30,7 @@ Na resolução deste projeto deve ser utilizada a Linguagem de Programação C. 
 - Considere a implementação de funções para melhorar a legibilidade, evitar a duplicação e criar soluções mais genéricas.
 - É proibida a utilização de variáveis globais - i.e. variáveis declaradas fora de qualquer função.
 - É proibida a utilização da função `strtok()` e da instrução `goto`
+- É proibido efectuar chamadas de sistema com a função `system()`
 - Este trabalho deverá ser realizado individualmente.
 
 Para a realização deste projeto, os alunos deverão adquirir as seguintes competências:
@@ -49,7 +50,6 @@ Para a realização deste projeto, os alunos deverão adquirir as seguintes comp
 O tabuleiro é construído quando o programa arranca. O tabuleiro tem sempre a forma retangular (ou quadrangular). O número de linhas e colunas pode ser passado pela linha de comandos (ver secção argumentos do main) ou então podem ser utilizados os valores por omissão:
    - número de linhas = 3
    - número de colunas = 7
-
 
 Cada jogada começa com o lançamento de dois dados (ou seja pode sair um número entre 2 e 12). Após lançar os dados, o jogador indica qual o peão que pretende movimentar. O peão selecionado avança no tabuleiro no sentido dos ponteiros do relógio. Caso o peão passe por uma casa onde esteja um peão da família oposta, fará com que esse peão (o da família oposta) tenha de voltar à sua casa mãe. Esta situação chama-se deixar o peão constipado.
 
@@ -207,6 +207,44 @@ Note que as casas mãe são sempre casas seguras.
 
 # Implementação
 
+**Note que, sempre que o programa espera uma interação do utilizador, apresenta no terminal o caracter `>`. Este caracter indica que o programa está parado, à espera que o utilizador escolha uma opção ou introduza um texto.**
+
+
+Antes de começar o jogo, o programa permite adicionar manualmente casas seguras, apresentando o menu de configurações:
+```
++--------------------------------------------------------+
+|         Nao Te Constipes - configs                     |
++--------------------------------------------------------+
+| confadd <numero>    - adicionar casa segura            |
+| confsave <nome>     - gravar ficheiro de casas seguras |
+| confboard <numero>  - mostrar o tabuleiro              |
+| confstart <numero>  - iniciar o jogo                   |
+| confmenu            - imprimir menu                    |
++--------------------------------------------------------+
+```
+
+## opção `confadd`
+
+Com este comando o utilizador especifica o número da casa que passará a ser uma casa segura. É obrigatório passar o número da casa. Caso esse número não seja passado, ou caso seja um número inválido (tendo em conta o tamanho do tabuleiro), deverá ser apresentada a mensagem `INVAL_PARAMS` e o menu deverá voltar a ser apresentado.
+
+## opção `confsave`
+
+Com este comando o utilizador especifica o nome do ficheiro onde pretende gravar as casas seguras. É obrigatório passar o nome do ficheiro. Caso esse nome não seja passado deverá ser apresentada a mensagem `INVAL_PARAMS` e o menu deverá voltar a ser apresentado. Caso ocorra algum erro na gravação do ficheiro, deverá ser apresentada a mensagem `Erro na abertura do ficheiro`.
+
+## opção `confboard`
+
+Com este comando o programa apresenta o tabuleiro no ecrã. O número que este comando espera representa o modo de apresentação é opcional. Caso não seja passado, o tabuleiro é apresentado assumindo o modo que terá sido passado nos argumentos do main. Caso modo seja inválido, deverá ser apresentada a mensagem  `INVAL_PARAMS` e o menu deverá voltar a ser apresentado.
+
+
+## opção `confstart <seed>`
+
+Com este comando o jogo deverá ser iniciado. O número que este comando espera é opcional e representa a seed para inicialização dos números aleatórios. Caso o número não seja passado, deverá ser utilizado o número que foi passado nos argumentos do main.
+
+## opção `confmenu`
+
+O menu de configurações volta a ser apresentado no terminal.
+
+
 ## Tabuleiro
 Para a construção do tabuleiro usa-se uma lista ligada, sendo definida com a seguinte estrutura principal:
 ```
@@ -281,24 +319,26 @@ srand(1); // initialize seed
 
 
 ## Argumentos do main
-Ao lançar a aplicação esta pode aceitar 4 argumentos.
-Os argumentos são três números e um nome dum ficheiro.
+Ao lançar a aplicação esta pode aceitar 5 argumentos.
+Os argumentos são quatro números e um nome dum ficheiro.
  Por exemplo:
 ```
-main.exe 0 5 9 configuracao.txt
+main.exe 127 0 5 9 configuracao.txt
 ```
-* O primeiro número indica o modo de apresentação do tabuleiro - neste caso 0, é o modo por defeito. Em alternativa, o valor 1 fará com que o tabuleiro seja impresso em modo simples, apenas mostrando o número das casas e os peões.
-* O segundo número indica o número de linhas do tabuleiro (neste exemplo é 5)
-* O terceiro número indica o número de colunas do tabuleiro (neste exemplo é 9)
-* O quarto é um campo com um nome dum ficheiro com informação das casas seguras (neste exemplo configuração.txt)
+* O primeiro número indica a seed utilizada para inicialização do gerador de números aleatórios - neste caso 1, é valor por omissão.
+* O segundo número indica o modo de apresentação do tabuleiro - neste caso 0, é o modo por defeito. Em alternativa, o valor 1 fará com que o tabuleiro seja impresso em modo simples, apenas mostrando o número das casas e os peões.
+* O terceiro número indica o número de linhas do tabuleiro (neste exemplo é 5)
+* O quarto número indica o número de colunas do tabuleiro (neste exemplo é 9)
+* O quinto é um campo com um nome dum ficheiro com informação das casas seguras (neste exemplo configuração.txt)
 
 O ficheiro contém uma lista de números, cada número identifica uma casa segura.
 
 Os argumentos são opcionais e o utilizador pode passar as seguintes combinações de argumentos:
 - Não passar argumentos - deverão ser utilizados os valores por omissão;
-- Passar apenas o modo de apresentação do tabuleiro;
-- Passar o modo de apresentação do tabuleiro, e o número de linhas;
-- Passar o modo de apresentação do tabuleiro, o número de linhas e o número de colunas;
+- Passar apenas a seed;
+- Passar apenas a seed e o modo de apresentação do tabuleiro;
+- Passar a seed, o modo de apresentação do tabuleiro, e o número de linhas;
+- Passar a seed, o modo de apresentação do tabuleiro, o número de linhas e o número de colunas;
 - Passar todos os argumentos.
 
 ## Leitura do ficheiro (Casas Seguras)
@@ -310,13 +350,7 @@ Se o ficheiro quiser indicar que as casas seguras são 2, 7 e 12. O conteúdo do
 7
 12
 ```
-
-Quando o ficheiro é aberto para leitura, o programa imprime a mensagem:
-```
-fich nome_do_ficheiro\n
-```
-
-No máximo só podem existir 128 casas seguras.
+As casas seguras não precisam de estar ordenadas. Não há limite para o número de casas seguras. O ficheiro pode ter casas seguras repetidas.
 
 
 ## Inclusão e compilação das funções fornecidas
