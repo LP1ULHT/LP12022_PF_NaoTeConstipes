@@ -454,13 +454,11 @@ De notar que ‘y’ está na casa 14, logo a 10 casas da casa mãe, se o valor 
 
 # Datas 
 
-O código deverá ser submetido na plataforma PANDORA [(2)](#ref2) até às **23:59 do dia 24 de Junho de 2022** no *contest* **LP12022PF**.
+O código deverá ser submetido na plataforma PANDORA [(2)](#ref2) até às **23:59 do dia 16 de Julho de 2022** no *contest* **LP12022PR**.
 
 
 
 ## 7. Peso na avaliação
-
-O projeto final vale 20% da nota final e será cotado de 0 a 20 valores.
 
 O projeto de recurso e de época especial valem 50% da nota final e será cotado de 0 a 20 valores.
  
